@@ -22,6 +22,7 @@ int main()
         char result = static_cast<unsigned char>(in.get()) ^ 0x42;
 
         std::cout << static_cast<unsigned char>(result);
+
     }
 
     in.close();
