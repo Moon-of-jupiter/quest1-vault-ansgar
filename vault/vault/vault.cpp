@@ -14,18 +14,30 @@ int main()
 
     std::cout << "Hello World!\n";
 
-    string encrypted;
+    string decrypted;
+
     while(in)
     {
        
         //char result = in.get() ^ 0x42;
         char result = static_cast<unsigned char>(in.get()) ^ 0x42;
 
-        std::cout << static_cast<unsigned char>(result);
+        decrypted += static_cast<unsigned char>(result);
 
+        
     }
 
+    std::cout << decrypted;
+
     in.close();
+
+
+    ofstream out("message.txt");
+
+    out << decrypted;
+
+    out.close();
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
